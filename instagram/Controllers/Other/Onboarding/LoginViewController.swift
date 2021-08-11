@@ -4,6 +4,7 @@
 //
 //  Created by 박준영 on 2021/07/16.
 //
+
 import SafariServices
 import UIKit
 
@@ -45,6 +46,7 @@ class LoginViewController: UIViewController {
         return field
         
     }()
+    
     private let loginButton : UIButton = {
         let button = UIButton()
         button.setTitle("Log In", for: .normal)
@@ -56,6 +58,7 @@ class LoginViewController: UIViewController {
         
         
     }()
+    
     private let termsButton : UIButton = {
         let button = UIButton()
         button.setTitle("Terms of Serviced", for: .normal)
@@ -67,8 +70,6 @@ class LoginViewController: UIViewController {
         button.setTitle("Privacy Policy", for: .normal)
         button.setTitleColor(.secondaryLabel, for: .normal)
         return button
-        
-        return UIButton()
     }()
     
     
@@ -83,7 +84,7 @@ class LoginViewController: UIViewController {
     private let headerView : UIView = {
         let header = UIView()                                                   //UIView생성
         header.clipsToBounds = true
-        let backgroundImageView = UIImageView(image: UIImage(named: "Gradient"))//UIImageView 생성 ( UiImageview안에는 UIImage) 
+        let backgroundImageView = UIImageView(image: UIImage(named: "Gradient"))//UIImageView 생성 ( UiImageview안에는 UIImage)
         header.addSubview(backgroundImageView)//흠..!!
         
         
@@ -94,7 +95,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSubviews()
+        addSubviews() //subview들 업로드 !!
         
         loginButton.addTarget(self,
                               action: #selector(didTapLoginButton),
@@ -167,7 +168,7 @@ class LoginViewController: UIViewController {
         guard var backgroundView = headerView.subviews.first else {
             return
         }//headerview의 subview들 중 첫번째면 ? return
-        backgroundView.frame = headerView.bounds
+        backgroundView.frame = headerView.bounds //맞추저
         
         let imageView = UIImageView(image: UIImage(named: "text"))
         headerView.addSubview(imageView)
@@ -191,15 +192,37 @@ class LoginViewController: UIViewController {
         view.addSubview(createAccountButton)
         view.addSubview(headerView)
     }
-    
+    //@objc 붙은 걸 유의 selector로 전달되는 함수이기에 @objc를 붙여줘야함 
     @objc private func didTapLoginButton() {
         passwordField.resignFirstResponder()
         usernameEmailField.resignFirstResponder()
         
-        guard let usernameEmail = usernameEmailField.text,!usernameEmail.isEmpty,let passWord = passwordField.text,!passWord.isEmpty,passWord.count >= 8 else{
+        guard let usernameEmail = usernameEmailField.text,!usernameEmail.isEmpty,
+              let password = passwordField.text,!password.isEmpty,password.count >= 8 else{
             return
         }
-        //login functionalitly
+        //  login functionalitly
+        var username : String?
+        var email : String?
+        
+        if usernameEmail.contains("@"),usernameEmail.contains("."){
+            // email
+            email = usernameEmail
+        }
+        else {
+            // user name
+        }
+        AuthManager.shared.loginUser(username: username, email: email, password: password) { success in
+            if success {
+                self.dismiss(animated: true, completion: nil)
+            }
+            else {
+                let alert = UIAlertController(title: "Log in Error", message: "We were",preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+                self.present(alert,animated:true)
+            }
+        }
+        
     }
     @objc private func didTapTermsButton() {
         guard let url = URL(string: "https://help.instagram.com/581066165581870") else {
@@ -217,7 +240,8 @@ class LoginViewController: UIViewController {
     }
     @objc private func didTapCreateAccountButton() {
         let vc = RegistrationViewController()
-        present(vc,animated: true)
+        vc.title = "Create Account"
+        present(UINavigationController(rootViewController: vc), animated: true)
     }
     
     

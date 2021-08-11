@@ -13,7 +13,7 @@
 		3329331026BA84DF0030D626 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3329330F26BA84DF0030D626 /* StorageManager.swift */; };
 		3329331226BA8D650030D626 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3329331126BA8D650030D626 /* Extension.swift */; };
 		339DD56D26A096A9004406EA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339DD56C26A096A9004406EA /* LoginViewController.swift */; };
-		339DD56F26A096C3004406EA /* LegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339DD56E26A096C3004406EA /* LegistrationViewController.swift */; };
+		339DD56F26A096C3004406EA /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339DD56E26A096C3004406EA /* RegistrationViewController.swift */; };
 		339DD57126A096FA004406EA /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339DD57026A096FA004406EA /* PostViewController.swift */; };
 		339DD57326A0973B004406EA /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339DD57226A0973B004406EA /* EditProfileViewController.swift */; };
 		339DD57526A09754004406EA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339DD57426A09754004406EA /* SettingsViewController.swift */; };
@@ -42,7 +42,7 @@
 		3329330F26BA84DF0030D626 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		3329331126BA8D650030D626 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		339DD56C26A096A9004406EA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		339DD56E26A096C3004406EA /* LegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegistrationViewController.swift; sourceTree = "<group>"; };
+		339DD56E26A096C3004406EA /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		339DD57026A096FA004406EA /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		339DD57226A0973B004406EA /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		339DD57426A09754004406EA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				339DD56C26A096A9004406EA /* LoginViewController.swift */,
-				339DD56E26A096C3004406EA /* LegistrationViewController.swift */,
+				339DD56E26A096C3004406EA /* RegistrationViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -340,7 +340,7 @@
 				339DD57F26A09820004406EA /* PublishPostViewController.swift in Sources */,
 				33E5B84D26A00E5E00B0356F /* CameraViewController.swift in Sources */,
 				33E5B83626A00B9000B0356F /* HomeViewController.swift in Sources */,
-				339DD56F26A096C3004406EA /* LegistrationViewController.swift in Sources */,
+				339DD56F26A096C3004406EA /* RegistrationViewController.swift in Sources */,
 				339DD57D26A097F9004406EA /* PostEditorViewController.swift in Sources */,
 				3329331026BA84DF0030D626 /* StorageManager.swift in Sources */,
 				339DD57126A096FA004406EA /* PostViewController.swift in Sources */,
